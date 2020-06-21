@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Meme Dankness Calculator</title>
+    <link type=text/css rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 <div>
 
     <h1>Assess the dankness of your meme!</h1>
-    <p>Upload dat shiz</p>
-    <button>Uplaod from your device</button>
-    <p>or...</p>
-    <button>Paste a damn link</button>
-    <--put a picture of link here obvs-->
-</div>
-    <h2>How dank is your meme?</h2>
-    <p>result will appear here once i've done the thing</p>
-</div>
+    <p class="topclick"><input type="file" class="topclick" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+    <p class="topclick"><label for="file" class="topclick" style="cursor: pointer;">Click here to upload your dank meme</label></p>
+    <p><img id="output" width="300" /></p>
 
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+</div>
+<label id="danky" type="button" class="btn" name="button">Click here to assess that meme</label>
+<p id="result">Your result will appear here.</p>
+<script src="dank.js"></script>
+</div>
+<div>
+    <footer>
+        <p>(c) Luke Chant 2020</p>
+        <p>Automatic for the people.</p>
+    </footer>
+</div>
 </body>
 </html>
